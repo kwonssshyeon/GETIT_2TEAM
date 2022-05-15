@@ -19,6 +19,17 @@
               {% endif %}
               <h2 class="card-title">{{ p.title }}</h2>
               <p class="card-text">{{ p.content }}</p>
+              {% if p.tags.exists %}
+                <i class = "fas fa-tags"></i>
+                {% for tag in p.tags.iterator %}
+                  <a href = "{{ tag.get_absolute_url }} ">
+                    <span class = "badge badge rounded-pill bg-primary">
+                      {{ tag }}
+                    </span>
+                  </a>
+                {% endfor %}
+                <br><br>
+              {% endif %}
               <a href="{{ p.get_absolute_url }}" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
