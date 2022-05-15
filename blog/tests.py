@@ -10,6 +10,7 @@ class TestView(TestCase):
         self.client = Client()
         self.user_1 = User.objects.create_user(username = '이상엽', password = 'sangyub0424')
 
+
         self.category_movie = Category.objects.create(name = 'movie', slug = 'movie')
 
         self.tag_python_kor = Tag.objects.create(name = "파이썬 공부", slug = "파이썬 공부")
@@ -167,6 +168,8 @@ class TestView(TestCase):
         self.assertNotEqual(response.status_code, 200)
 
         self.client.login(username = 'trump', password = 'somepassword')
+        response = self.client.get('/blog/create_post/')
+        self.assertNotEqual(response.status_code, 200)
 
         response = self.client.get("/blog/create_post/")
         self.assertEqual(response.status_code, 200)
