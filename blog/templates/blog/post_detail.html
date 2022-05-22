@@ -1,19 +1,22 @@
 {% extends 'blog/base.html' %}
 
 {% block head_title %}
-    {{ post.title }}-Blog
+    {{post.title}}-Blog
 {% endblock %}
 
 {% block main_area %}
     <div id = "post-area">    
-        <!-- Title -->
+        
         {% if post.category %}
-        <span class = "badge badge-secondary float-right">{{ post.category }}</span>
+        <span class = "badge badge-secondary float-right">{{post.category}}</span>
         {% else %}
         <span class = "badge badge-secondary float-right">미분류</span>
         {% endif %}
         
+        <!-- Title -->
         <h1 class="mt-4">{{ post.title }}</h1>
+        <h5 class="text-muted">{{post.hook_text}}</h5>
+
 
         <!-- Author -->
         <p class="lead">
@@ -47,7 +50,7 @@
         {% if post.tags.exists %}
             <i class = "fas fa-tags"></i>
             {% for tag in post.tags.all %}
-                <a href = "{{ tag.get_absolute_url }}" class = "badge badge rounded-pill bg-primary">
+                <a href = "{{tag.get_absolute_url}}" class = "badge badge rounded-pill bg-primary">
                     {{ tag }}
                 </a>
             {% endfor %}
@@ -55,7 +58,7 @@
         {% endif %}
 
         {% if post.file_upload %}
-        <a href = "{{ post.file_upload.url }}" class = "btn btn-secondary" role = "button" download>Download
+        <a href = "{{post.file_upload.url}}" class = "btn btn-secondary" role = "button" download>Download
             {% if post.get_file_ext == 'csv' %}
                 <i class = "fas fa-file-csv"></i>
             {% elif post.get_file_ext == 'xlsx' or post.get_file_ext == 'xls' %}
@@ -66,7 +69,7 @@
                 <i class = "far fa-file"></i>
             {% endif %}
 
-            {{ post.get_file_name }}
+            {{post.get_file_name}}
         </a>
         {% endif %}
 

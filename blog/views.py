@@ -88,6 +88,11 @@ def tag_page(request, slug):
         }
     )
 
+def feedback_page(request):
+    return render(
+        request,
+        'blog/feedback.html'
+    )
 
 # Create your views here.
 # def index(request):
