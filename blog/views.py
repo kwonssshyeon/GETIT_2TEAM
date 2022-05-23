@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
-from .models import Post, Category, Tag
+from .models import Post, Category, Tag,Team
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
+from django.utils import timezone
 
 class PostList(ListView):
     model = Post
@@ -93,6 +94,17 @@ def feedback_page(request):
         request,
         'blog/feedback.html'
     )
+
+def team_page(request):
+    return render(
+        request,
+        'blog/teamMatching.html'
+    )
+
+def team_create(request, team_id):
+    team = get_object_or_404(Team, pk=team_id)
+    team.team_set.create(content=request.POST.get('content'), create_date=timezone.now())
+    return redirect('pybo:detail', team_id=team.id)
 
 # Create your views here.
 # def index(request):

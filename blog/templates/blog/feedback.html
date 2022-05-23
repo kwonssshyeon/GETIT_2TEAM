@@ -7,12 +7,14 @@
 
     <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
     <script src="https://kit.fontawesome.com/0d248b795e.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/blog/static/blog/JS/feedbackModal"></script>
 
 
 </head>
 
 <body>
     {% include 'blog/navbar.html' %}
+    <button onclick="whatTimeIsIt()">현재시간</button>
 
     <div class="container my-3">
         <div class="col">
@@ -168,7 +170,7 @@
     </div>
 
 
-
+    <button onclick="whatTimeIsIt()">현재시간</button>
 
     <!--{% include 'blog/footer.html' %}-->
 
@@ -182,6 +184,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+
 
 
 </body>
