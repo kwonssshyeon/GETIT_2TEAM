@@ -3,22 +3,77 @@
 {% load static %}
 
 <head>
-    <title>{% block head_title %}Blog{% endblock %}</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <title>{% block head_title %}상호평가{% endblock %}</title>
+
     <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
     <script src="https://kit.fontawesome.com/0d248b795e.js" crossorigin="anonymous"></script>
+
 
 </head>
 
 <body>
-    <h1>일단 화면엔 나옴</h1>
+    {% include 'blog/navbar.html' %}
+
+    <div class="container my-3">
+        <div class="col">
+            <div class="row-sm-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="https://publicdomainvectors.org/tn_img/abstract-user-flat-4.webp" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">홍길동</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">평가하기</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="row-sm-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="https://publicdomainvectors.org/tn_img/abstract-user-flat-4.webp" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">홍길동</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">평가하기</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="row-sm-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="https://publicdomainvectors.org/tn_img/abstract-user-flat-4.webp" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">홍길동</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">평가하기</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Launch demo modal
-    </button>
+    <!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        평가하기
+    </button>-->
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -94,17 +149,14 @@
                     </div>
                     <hr>
 
-                    
+
                     <div id="Op3">
                         비고
-                        <input type="text" class="form-control" placeholder="" aria-label="evaluate" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="" aria-label="evaluate"
+                            aria-describedby="basic-addon1">
                     </div>
-                    
 
-
-
-
-
+                    <h1></h1>
 
                 </div>
                 <div class="modal-footer">
@@ -118,7 +170,12 @@
 
 
 
+    <!--{% include 'blog/footer.html' %}-->
 
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
