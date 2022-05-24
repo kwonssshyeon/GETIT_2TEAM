@@ -12,6 +12,7 @@ urlpatterns = [
     path('<int:pk>/', views.PostDetail.as_view()),
     path('feedback/',views.feedback_page),
     path('team/',views.team_page),
-    
+    path('create_team/',views.TeamCreate.as_view())
+    #path('team/<int:team_id>/',views.team_page),
     #path('<int:pk>/', views.single_post_page),
 ]

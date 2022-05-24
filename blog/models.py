@@ -62,6 +62,11 @@ class Post(models.Model):
 
 
 class Team(models.Model):
-    content = models.TextField()
-    num = models.IntegerField()
+    title = models.CharField(max_length=30,null=True,default='')
+    num = models.IntegerField(null=True,default='')
+    content = models.TextField(null=True,default='')
+    subcontent = models.TextField(null=True,default='')
+    created_date = models.DateTimeField(auto_now=True)
 
+    def get_absolute_url(self):
+        return f'/blog/team/{self.pk}/'

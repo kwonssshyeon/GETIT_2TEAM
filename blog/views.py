@@ -54,6 +54,14 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
         else:
             raise PermissionDenied
 
+
+class TeamCreate(CreateView):
+    model =Team
+    fields = ['title','num','content','subcontent']
+
+
+
+
 def category_page(request, slug):
     if slug == 'no_category':
         category = '미분류'
@@ -104,7 +112,26 @@ def team_page(request):
 def team_create(request, team_id):
     team = get_object_or_404(Team, pk=team_id)
     team.team_set.create(content=request.POST.get('content'), create_date=timezone.now())
-    return redirect('pybo:detail', team_id=team.id)
+    return redirect('blog:detail', team_id=team.id)
+
+
+def index(request):
+    team_list = Team.objects.order_by('-create_date')
+    context = {'team_list':team_list}
+    return render(request,'blog/teamMatching.html',context)
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 # Create your views here.
 # def index(request):
