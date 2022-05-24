@@ -68,5 +68,7 @@ class Team(models.Model):
     subcontent = models.TextField(null=True,default='')
     created_date = models.DateTimeField(auto_now=True)
 
+
+    #여기 수정해야댐
     def get_absolute_url(self):
         return f'/blog/team/{self.pk}/'

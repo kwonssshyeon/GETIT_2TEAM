@@ -97,6 +97,8 @@ def tag_page(request, slug):
         }
     )
 
+
+
 def feedback_page(request):
     return render(
         request,
