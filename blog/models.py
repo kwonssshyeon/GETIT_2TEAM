@@ -61,6 +61,8 @@ class Post(models.Model):
         return self.get_file_name().split('.')[-1]
 
 
+
+
 class Team(models.Model):
     title = models.CharField(max_length=30,null=True,default='')
     num = models.IntegerField(null=True,default='')
@@ -71,4 +73,4 @@ class Team(models.Model):
 
     #여기 수정해야댐
     def get_absolute_url(self):
-        return f'/blog/team/{self.pk}/'
+        return f'/blog/team/{self.team_id}/'

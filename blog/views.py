@@ -42,6 +42,8 @@ class PostCreate(LoginRequiredMixin,UserPassesTestMixin,CreateView):
         else:
             return redirect('/blog/')
 
+
+
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
     fields = ['title', 'hook_text', 'content', 'head_image', 'file_upload', 'category', 'tags'] 
@@ -55,9 +57,24 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
             raise PermissionDenied
 
 
+
+
+class TeamList(ListView):
+    model = Team
+    template_name = 'blog/teamMatching.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(TeamList,self).get_context_data()
+        return context
+
+    
+
 class TeamCreate(CreateView):
     model =Team
     fields = ['title','num','content','subcontent']
+
+
+
 
 
 
@@ -81,6 +98,8 @@ def category_page(request, slug):
             'category': category, 
         }
     )
+
+
 
 def tag_page(request, slug):
     tag = Tag.objects.get(slug = slug)
@@ -106,31 +125,27 @@ def feedback_page(request):
     )
 
 def team_page(request):
+    team_list = Team.objects.all()
+
     return render(
         request,
-        'blog/teamMatching.html'
+        'blog/teamMatching.html',
+        {
+            'team_list' : team_list
+
+        }
     )
 
-def team_create(request, team_id):
-    team = get_object_or_404(Team, pk=team_id)
-    team.team_set.create(content=request.POST.get('content'), create_date=timezone.now())
-    return redirect('blog:detail', team_id=team.id)
+#def team_create(request, team_id):
+ #   team = get_object_or_404(Team, pk=team_id)
+  #  team.team_set.create(content=request.POST.get('content'), create_date=timezone.now())
+   # return redirect('blog:detail', team_id=team.id)
 
 
-def index(request):
-    team_list = Team.objects.order_by('-create_date')
-    context = {'team_list':team_list}
-    return render(request,'blog/teamMatching.html',context)
-
-
-
-
-
-
-
-
-
-
+#def index(request):
+ #   team_list = Team.objects.order_by('-create_date')
+  #  context = {'team_list':team_list}
+   # return render(request,'blog/teamMatching.html',context)
 
 
     

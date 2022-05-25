@@ -1,75 +1,28 @@
-<!DOCTYPE html>
-{% load static %}
-<html>
+{% extends 'blog/base_full_width.html' %}
 
-<head>
-    <title>{% block head_title %}Team-Match{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+{% block head_title %}Team-Match{% endblock %}
 
-    <script src="https://kit.fontawesome.com/0d248b795e.js" crossorigin="anonymous"></script>
-</head>
+{% block main_area %}
 
-<body>
-    {% include 'blog/navbar.html' %}
-    {% if team_list %}
-    <ul>
-        {% for team in team_list %}
-        <li><a href="/blog/{{team.id}}/">{{team}}</a></li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-
-
-
-
-    <div class="container my-3">
-        <button class="btn btn-primary" onclick="location.href='/blog/create_team/'">새로운 팀 만들기</button >
-        
-        
-        <div class="row">
-            <div class="col-12" id = "main-area">
-                {% block main_area %}
-                {% endblock %}
-            </div>
-        </div>
-
-
-
-
-
-
-
-        <div class="col">
-            <div class="row-sm-6" style="padding-bottom:10px;">
-                <div class="card" style="max-width: 700px;">
-                    <h5 class="card-header">프론트엔드 개발자 모집</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">콘텐츠 미정/현재 인원 2명/대구 거주</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">지원하기</a>
+<div class="container my-3">
+    <button class="btn btn-primary" onclick="location.href='/blog/create_team/'">새로운 팀 만들기</button >
+        {% csrf_token %}
+        {% if team_list %}
+            {% for t in team_list %}
+                <div class="row-sm-6" style="padding-bottom:10px;">
+                    <div class="card" style="max-width: 700px;">
+                        <h5 class="card-header">{{ t.title }}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">{{t.content}}</h5>
+                            <p class="card-text">{{t.subcontent}} / {{t.num}}</p>
+                            <a href="#" class="btn btn-primary">지원하기</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row-sm-6" style="padding-bottom:10px;">
-                <div class="card" style="max-width: 700px;">
-                    <h5 class="card-header">디자이너 모집</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">아이디어 구상단계/웹서비스/장소미정/2022년6월까지</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">지원하기</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            {% endfor %}
+        {% endif %}
 
 
+{% endblock %}  
 
 
-
-    {% include 'blog/footer.html' %}
-
-
-</body>
-
-</html>
