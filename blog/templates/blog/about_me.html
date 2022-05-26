@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <title>{% block head_title %}내 프로필{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+
+    <script src="https://kit.fontawesome.com/0d248b795e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    {% include 'blog/navbar.html' %}
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-md-8 col-lg-9" id = "main-area">
+                <h1>내 프로필</h1>
+                <hr/>
+                <div class="container my-3">
+                    <div class="row">
+                        <div class="col-3" id = "main-area">
+                            {% block main_area %}
+                                <img src="images/Profile.jpg" alt="Profile">
+            
+                            {% endblock %}
+                        </div>
+                        <div class="col-4">
+                            <h6>이름 | {{ p.name }}</h6>
+                            <h6>학력 | {{ p.school }}</h6>
+                            <h6>약력 | {{ p.work }}</h6>
+                        </div>
+                        <div class="col-5">
+                            <h6>소개</h6>
+                            <h6>{{ p.content }}</h6>
+                        </div>
+            
+                        
+                    </div>
+                    <div class="container my-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <h4>관심 공모전 분야</h4>
+                            <button type="button" class="btn btn-primary btn-sm">창업</button>
+                            <button type="button" class="btn btn-primary btn-sm">프로그래밍</button>
+                            <button type="button" class="btn btn-primary btn-sm">논문</button>
+                            <button type="button" class="btn btn-primary btn-sm">+</button>
+                        </div>
+                        <div class="col-6">
+                            <h4>평점</h4>
+                            <div class="star-ratings">
+                                <div 
+                                class="star-ratings-fill space-x-2 text-lg"
+                                :style="{ width: ratingToPercent + '%' }"
+                                >
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                                <div class="star-ratings-base space-x-2 text-lg">
+                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-2">
+                <!-- Search Widget -->
+                <div class="card my-4">
+                    <h5 class="card-header">이용자 검색</h5>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button">검색</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories Widget -->
+                <div class="card mb-4" id = 'categories-card'>
+                    <h5 class="card-header">공모전 카테고리</h5>
+                    <div class="card-body">
+                        <div class="row">
+                                <ul>
+                                    {% for category in categories %}
+                                    <li><a href = "{{category.get_absolute_url}}">({{category}} {{category.post_set.count}})</a></li>
+                                    {% endfor %}
+                                    <li><a href = "/blog/category/no_category/">광고 ({{no_category_post_count}})</a></li>
+                                    <li><a href = "/blog/category/no_category/">UCC ({{no_category_post_count}})</a></li>
+                                    <li><a href = "/blog/category/no_category/">창업 ({{no_category_post_count}})</a></li>
+                                    <li><a href = "/blog/category/no_category/">논문 ({{no_category_post_count}})</a></li>
+                                    <li><a href = "/blog/category/no_category/">프로그래밍 ({{no_category_post_count}})</a></li>
+                                    ...
+
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
+    
+
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+        {% include 'blog/footer.html' %}
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
