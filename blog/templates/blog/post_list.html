@@ -8,7 +8,7 @@
     {% endif %}
   {% endif %}
 
-  <h1>Blog {% if category %} <span class = "badge bg-secondary">{{ category }}</span> {% endif %} {% if tag %}<i class = "fas fa-tags"></i> <span class = "badge badge rounded-pill bg-primary">{{ tag }} ({{ tag.post_set.count }}</span> {% endif %}</h1>
+  <h1>진행중인 공모전 {% if category %} <span class = "badge bg-secondary">{{ category }}</span> {% endif %} {% if tag %}<i class = "fas fa-tags"></i> <span class = "badge badge rounded-pill bg-primary">{{ tag }} ({{ tag.post_set.count }}</span> {% endif %}</h1>
     
     {% if post_list %}
       {% for p in post_list %}

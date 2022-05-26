@@ -73,4 +73,4 @@ class Team(models.Model):
 
     #여기 수정해야댐
     def get_absolute_url(self):
-        return f'/blog/team/{self.team_id}/'
+        return f'/blog/team/'
