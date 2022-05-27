@@ -15,5 +15,6 @@ urlpatterns = [
     path('create_team/',views.TeamCreate.as_view()),
     path('create_feedback/',views.FeedbackCreate.as_view()),
     path('team/<int:pk>/',views.team_page),
+    path('team_apply/', views.team_apply_page)
     #path('<int:pk>/', views.single_post_page),
 ]

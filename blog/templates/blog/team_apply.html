@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+
+{% block main_area %}
+    <!--{% block head_title %}내 프로필{% endblock %}-->
+    <div class="container my-3">
+        <h1>팀 지원 상세 페이지</h1>
+        <div class="card" style="max-width: 700px;">
+            <h4 class="card-header">팀원 구합니다!{{ t.title }}</h4>
+            <div class="card-body">
+                <p class="card-title">
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="https://media.istockphoto.com/vectors/user-avatar-profile-icon-black-vector-illustration-website-or-app-ui-vector-id1314335932?b=1&k=20&m=1314335932&s=170667a&w=0&h=GhL6_JKesOe9DBOQrK8KwkoL9HON62joyNM301xX2aE=" alt="Profile" style="width:25px; height:25px;">
+                        </div>
+                        <div class="col-3">
+                            <p>닉네임{{t.person}}</p>
+                        </div>
+                        <div class="col-8">
+                            <p>작성일 {{t.day}}</p>
+                        </div>
+                    </div>
+                </p>
+                <p class="card-text">여기에는 본문의 내용이 들어갑니다. 저는 ~~한 분을 찾고 있습니다.{{t.content}}</p>
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+
+            </div>
+        </div>
+
+    </div>
+
+    
+                
+{% endblock %}  
