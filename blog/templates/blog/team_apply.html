@@ -40,8 +40,9 @@
         function myFunction() {
             const btnElement = document.getElementById('demo');
             btnElement.innerText = "지원완료";
+
             alert('팀장님에게 메세지가 전송됩니다.\nㅇㅇㅇ님이 회원님의 "팀원 모집합니다" 글에 지원하였습니다.');
-            
+            localStorage.setItem("alertText" , 'ㅇㅇㅇ님이 회원님의 "팀원 모집합니다" 글에 지원하였습니다.');
 
         }
     </script>
