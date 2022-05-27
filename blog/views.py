@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
-from .models import Post, Category, Tag,Team
+from .models import Feedback, Post, Category, Tag,Team
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
 from django.utils import timezone
@@ -75,6 +75,12 @@ class TeamCreate(CreateView):
 
 
 
+class FeedbackCreate(CreateView):
+    model =Feedback
+    fields = ['name','op1','op2','op3']
+
+
+
 
 
 
@@ -119,9 +125,13 @@ def tag_page(request, slug):
 
 
 def feedback_page(request):
+    feedback_list = Feedback.objects.all()
     return render(
         request,
-        'blog/feedback.html'
+        'blog/feedback.html',
+        {
+            'feedback_list' : feedback_list
+        }
     )
 
 def team_page(request):

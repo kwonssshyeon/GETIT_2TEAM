@@ -14,7 +14,9 @@
 
 <body>
     {% include 'blog/navbar.html' %}
-    <button onclick="whatTimeIsIt()">현재시간</button>
+    
+    
+
 
     <div class="container my-3">
         <div class="col">
@@ -26,15 +28,21 @@
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                          <h5 class="card-title">홍길동</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <h5 class="card-title" id="NAME">권수현</h5>
+                          {% for f in feedback_list %}
+                          {% if '권수현' in f.name %}
+                          <p class="card-text">참여도 : {{f.op1}}<br>수행능력 : {{f.op2}}<br>비고 : {{f.op3}}</p>
                           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">평가하기</a>
+                          {% endif %}
+                          {% endfor %}
+                          <!-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">평가하기</a> -->
+                          <a href="/blog/create_feedback/" class="btn btn-primary">평가하기</a>
                         </div>
                       </div>
                     </div>
                   </div>
             </div>
+
             <div class="row-sm-6">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
@@ -43,15 +51,22 @@
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                          <h5 class="card-title">홍길동</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <h5 class="card-title" id="NAME">윤지민</h5>
+                          {% for f in feedback_list %}
+                          {% if '윤지민' in f.name %}
+                          <p class="card-text">참여도 : {{f.op1}}<br>수행능력 : {{f.op2}}<br>비고 : {{f.op3}}</p>
                           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">평가하기</a>
+                          {% endif %}
+                          {% endfor %}
+                          <!-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">평가하기</a> -->
+                          <a href="/blog/create_feedback/" class="btn btn-primary">평가하기</a>
                         </div>
                       </div>
                     </div>
                   </div>
             </div>
+
+
             <div class="row-sm-6">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
@@ -60,15 +75,21 @@
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                          <h5 class="card-title">홍길동</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <h5 class="card-title" id="NAME">홍길동</h5>
+                          {% for f in feedback_list %}
+                          {% if '홍길동' in f.name %}
+                          <p class="card-text">참여도 : {{f.op1}}<br>수행능력 : {{f.op2}}<br>비고 : {{f.op3}}</p>
                           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">평가하기</a>
+                          {% endif %}
+                          {% endfor %}
+                          <!-- <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">평가하기</a> -->
+                          <a href="/blog/create_feedback/" class="btn btn-primary">평가하기</a>
                         </div>
                       </div>
                     </div>
                   </div>
             </div>
+    
         </div>
     </div>
 
@@ -77,18 +98,26 @@
         평가하기
     </button>-->
 
+
+
+
+
+
+
+
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
+
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">팀원 상호평가</h4>
                 </div>
 
-                <div class="modal-body">
 
+                <div class="modal-body">
                     <div id="Op1">
                         참여도
                         <div class="form-check form-check-inline">
@@ -166,10 +195,13 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
-    <button onclick="whatTimeIsIt()">현재시간</button>
+
+
+
+
 
     <!--{% include 'blog/footer.html' %}-->
 

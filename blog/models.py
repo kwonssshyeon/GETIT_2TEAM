@@ -76,15 +76,21 @@ class Team(models.Model):
         return f'/blog/team/'
 
 
-class Feedback(models.Model):
-    name = models.CharField(max_length=20,default='')
-    SET_OF_CHOICES = (
+
+SET_OF_CHOICES = (
         ('1','1'),
         ('2','2'),
         ('3','3'),
         ('4','4'),
         ('5','5'),
     )
-    op1=forms.ChoiceField(choices=SET_OF_CHOICES,widget = forms.RadioSelect())
-    op2=forms.RadioSelect(choices=SET_OF_CHOICES)
+
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=20,default='')
+    op1=models.CharField(choices=SET_OF_CHOICES,max_length=100,default='')
+    op2=models.CharField(choices=SET_OF_CHOICES,max_length=100,default='')
     op3=models.TextField(null=True,default='')
+
+    def get_absolute_url(self):
+        return f'/blog/feedback/'
