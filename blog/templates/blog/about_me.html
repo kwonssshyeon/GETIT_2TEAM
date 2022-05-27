@@ -21,18 +21,20 @@
                     <div class="row">
                         <div class="col-3" id = "main-area">
                             {% block main_area %}
-                                <img src="images/Profile.jpg" alt="Profile">
-            
+                                <img src="https://media.istockphoto.com/vectors/user-avatar-profile-icon-black-vector-illustration-website-or-app-ui-vector-id1314335932?b=1&k=20&m=1314335932&s=170667a&w=0&h=GhL6_JKesOe9DBOQrK8KwkoL9HON62joyNM301xX2aE=" alt="Profile" style="width:200px; height:200px;">
                             {% endblock %}
                         </div>
                         <div class="col-4">
-                            <h6>이름 | {{ p.name }}</h6>
-                            <h6>학력 | {{ p.school }}</h6>
-                            <h6>약력 | {{ p.work }}</h6>
+                            <h4>이름 | {{ p.name }}</h4>
+                            <h6>홍길동</h6>
+                            <h4>학력 | {{ p.school }}</h4>
+                            <h6>경북대학교 컴퓨터학부 글로벌SW융합전공</h6>
+                            <h4>약력 | {{ p.work }}</h4>
+                            <h6>논문> Html과 CSS에 대하여</h6>
                         </div>
                         <div class="col-5">
-                            <h6>소개</h6>
-                            <h6>{{ p.content }}</h6>
+                            <h4>소개 |</h4>
+                            <h6>안녕하세요. 세상을 바꾸고 싶은 프로그래머입니다. 함께 하고싶은 분들의 지원을 기다립니다.{{ p.content }}</h6>
                         </div>
             
                         
@@ -40,14 +42,14 @@
                     <div class="container my-5">
                     <div class="row">
                         <div class="col-6">
-                            <h4>관심 공모전 분야</h4>
+                            <h4>관심 공모전 분야 |</h4>
                             <button type="button" class="btn btn-primary btn-sm">창업</button>
                             <button type="button" class="btn btn-primary btn-sm">프로그래밍</button>
                             <button type="button" class="btn btn-primary btn-sm">논문</button>
                             <button type="button" class="btn btn-primary btn-sm">+</button>
                         </div>
                         <div class="col-6">
-                            <h4>평점</h4>
+                            <h4>평점 |</h4>
                             <div class="star-ratings">
                                 <div 
                                 class="star-ratings-fill space-x-2 text-lg"
