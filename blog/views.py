@@ -136,6 +136,12 @@ def team_page(request):
         }
     )
 
+def team_apply_page(request):
+    return render(
+        request,
+        'blog/team_apply.html'
+    )
+
 #def team_create(request, team_id):
  #   team = get_object_or_404(Team, pk=team_id)
   #  team.team_set.create(content=request.POST.get('content'), create_date=timezone.now())
