@@ -2,40 +2,55 @@
 
 {% block main_area %}
 
-                    <h1>진행중인 공모전 {% if category %} <span class = "badge bg-secondary">{{ category }}</span> {% endif %} {% if tag %}<i class = "fas fa-tags"></i> <span class = "badge badge rounded-pill bg-primary">{{ tag }} ({{ tag.post_set.count }}</span> {% endif %}</h1>
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <a href = '/blog/'><img class="d-block w-100" src="https://cdn.pixabay.com/photo/2016/06/13/09/57/meeting-1453895_1280.png" alt="First slide" height = '400;'></a>
-                          </div>
-                          <div class="carousel-item">
-                            <a href = '/blog/'><img class="d-block w-100" src="https://cdn.pixabay.com/photo/2015/05/28/14/53/ux-788002_1280.jpg" alt="Second slide" height = '400;'></a>
-                          </div>
-                          <div class="carousel-item">
-                            <a href = '/blog/'><img class="d-block w-100" src="https://cdn.pixabay.com/photo/2015/01/08/18/24/programming-593312_1280.jpg" alt="Third slide" height = '400;'></a>
-                          </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </div>
-                    
-                
-    <div class="container">
-        <h2>전체공모전</h2>
-        <div class="list-group">
-          <a href="/blog/1" class="list-group-item">공모전1<span class="label label-default" style = "float:right">접수중</span></a>
-          <a href="#" class="list-group-item disabled">공모전2<span class="label label-default" style = "float:right">마감</span></a>
-          <a href="#" class="list-group-item disabled">공모전3<span class="label label-default" style = "float:right">마감</span></a>
-          <a href="#" class="list-group-item disabled">공모전4<span class="label label-default" style = "float:right">마감</span></a>
-          <a href="#" class="list-group-item disabled">공모전5<span class="label label-default" style = "float:right">마감</span></a>
-          <a href="#" class="list-group-item disabled">공모전6<span class="label label-default" style = "float:right">마감</span></a>
-          <a href="#" class="list-group-item disabled">공모전7<span class="label label-default" style = "float:right">마감</span></a>
+<h1>진행중인 공모전 {% if category %} <span class="badge bg-secondary">{{ category }}</span> {% endif %} {% if tag %}<i
+        class="fas fa-tags"></i> <span class="badge badge rounded-pill bg-primary">{{ tag }} ({{ tag.post_set.count
+        }}</span> {% endif %}</h1>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href='/blog/'><img class="d-block w-100"
+                    src="https://cdn.pixabay.com/photo/2016/06/13/09/57/meeting-1453895_1280.png" alt="First slide"
+                    height='400;'></a>
         </div>
-      </div>
-      {% endblock %}
+        <div class="carousel-item">
+            <a href='/blog/'><img class="d-block w-100"
+                    src="https://cdn.pixabay.com/photo/2015/05/28/14/53/ux-788002_1280.jpg" alt="Second slide"
+                    height='400;'></a>
+        </div>
+        <div class="carousel-item">
+            <a href='/blog/'><img class="d-block w-100"
+                    src="https://cdn.pixabay.com/photo/2015/01/08/18/24/programming-593312_1280.jpg" alt="Third slide"
+                    height='400;'></a>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+<div class="container">
+    <h2>전체공모전</h2>
+    <div class="list-group">
+        <a href="/blog/1" class="list-group-item">공모전1<span class="label label-default"
+                style="float:right">접수중</span></a>
+        <a href="#" class="list-group-item disabled">공모전2<span class="label label-default"
+                style="float:right">마감</span></a>
+        <a href="#" class="list-group-item disabled">공모전3<span class="label label-default"
+                style="float:right">마감</span></a>
+        <a href="#" class="list-group-item disabled">공모전4<span class="label label-default"
+                style="float:right">마감</span></a>
+        <a href="#" class="list-group-item disabled">공모전5<span class="label label-default"
+                style="float:right">마감</span></a>
+        <a href="#" class="list-group-item disabled">공모전6<span class="label label-default"
+                style="float:right">마감</span></a>
+        <a href="#" class="list-group-item disabled">공모전7<span class="label label-default"
+                style="float:right">마감</span></a>
+    </div>
+</div>
+{% endblock %}
