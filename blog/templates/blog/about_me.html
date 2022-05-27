@@ -1,28 +1,15 @@
-<!DOCTYPE html>
-{% load static %}
-<html>
+{% extends 'blog/base.html' %}
 
-<head>
-    <title>{% block head_title %}내 프로필{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+{% block main_area %}
 
-    <script src="https://kit.fontawesome.com/0d248b795e.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
     
-    {% include 'blog/navbar.html' %}
-    <div class="container my-3">
-        <div class="row">
-            <div class="col-md-8 col-lg-9" id = "main-area">
+                <!--{% block head_title %}내 프로필{% endblock %}-->
                 <h1>내 프로필</h1>
                 <hr/>
-                <div class="container my-3">
+                
                     <div class="row">
-                        <div class="col-3" id = "main-area">
-                            {% block main_area %}
-                                <img src="https://media.istockphoto.com/vectors/user-avatar-profile-icon-black-vector-illustration-website-or-app-ui-vector-id1314335932?b=1&k=20&m=1314335932&s=170667a&w=0&h=GhL6_JKesOe9DBOQrK8KwkoL9HON62joyNM301xX2aE=" alt="Profile" style="width:200px; height:200px;">
-                            {% endblock %}
+                        <div class="col-3">
+                            <img src="https://media.istockphoto.com/vectors/user-avatar-profile-icon-black-vector-illustration-website-or-app-ui-vector-id1314335932?b=1&k=20&m=1314335932&s=170667a&w=0&h=GhL6_JKesOe9DBOQrK8KwkoL9HON62joyNM301xX2aE=" alt="Profile" style="width:200px; height:200px;">
                         </div>
                         <div class="col-4">
                             <h4>이름 | {{ p.name }}</h4>
@@ -35,10 +22,10 @@
                         <div class="col-5">
                             <h4>소개 |</h4>
                             <h6>안녕하세요. 세상을 바꾸고 싶은 프로그래머입니다. 함께 하고싶은 분들의 지원을 기다립니다.{{ p.content }}</h6>
-                        </div>
-            
-                        
+                        </div> 
                     </div>
+
+                    
                     <div class="container my-5">
                     <div class="row">
                         <div class="col-6">
@@ -64,57 +51,5 @@
                         </div>
                     </div>
                     </div>
-                </div>
-
-            </div>
-            <div class="col-2">
-                <!-- Search Widget -->
-                <div class="card my-4">
-                    <h5 class="card-header">이용자 검색</h5>
-                    <div class="card-body">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-secondary" type="button">검색</button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Categories Widget -->
-                <div class="card mb-4" id = 'categories-card'>
-                    <h5 class="card-header">Categories</h5>
-                    <div class="card-body">
-                        <div class="row">
-                                <ul>
-                                    {% for category in categories %}
-                                    <li><a href = "{{category.get_absolute_url}}">({{category}} {{category.post_set.count}})</a></li>
-                                    {% endfor %}
-                                    <li><a href = "/blog/category/no_category/">미분류 ({{no_category_post_count}})</a></li>
-                                </ul>
-                        </div>
-                    </div>
-                </div>
-
-    
-
-            </div>
-        </div>
-        <!-- /.container -->
-    </div>
-        {% include 'blog/footer.html' %}
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-
-</body>
-
-</html>
+                
+{% endblock %}  

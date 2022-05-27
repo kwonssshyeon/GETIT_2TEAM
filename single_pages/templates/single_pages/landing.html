@@ -1,102 +1,8 @@
-<!DOCTYPE html>
-<html>
-    {% load static %}
-<head>
-    <title>{% block head_title %}GROUPING{% endblock %}</title>
+{% extends 'blog/base.html' %}
 
-    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
-    <script src="https://kit.fontawesome.com/0d248b795e.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="/">GROUPING</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/blog/">공모전</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about_me/">마이페이지</a>
-                    </li>
-                    <!--<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown link
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>-->
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal" style = "padding-left: 720px;">Log In</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+{% block main_area %}
 
-    <!-- Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="logInModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel"> <i class="fas fa-sign-in-alt"></i>&nbsp Log In</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button type="button" class="btn btn-outline-dark btn-block btn-sm "><i
-                                    class="fab fa-google"></i>&nbsp&nbsp Log in with Google</button>
-                            <button type="button" class="btn btn-outline-dark btn-block btn-sm "><i
-                                    class="far fa-envelope"></i>&nbsp&nbsp Log in with E-mail</button>
-                        </div>
-                        <div class="col-md-6">
-                            <button type="button" class="btn btn-outline-dark btn-block btn-sm"><i
-                                    class="far fa-envelope"></i>&nbsp&nbsp Sign Up with E-mail</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        
-    
-        <h1>진행중인 공모전 {% if category %} <span class = "badge bg-secondary">{{ category }}</span> {% endif %} {% if tag %}<i class = "fas fa-tags"></i> <span class = "badge badge rounded-pill bg-primary">{{ tag }} ({{ tag.post_set.count }}</span> {% endif %}</h1>
-        
-            <div class="row">
-                <div class="col-sm-8" id = "main-area">
-                    {% block main_area %}
+                    <h1>진행중인 공모전 {% if category %} <span class = "badge bg-secondary">{{ category }}</span> {% endif %} {% if tag %}<i class = "fas fa-tags"></i> <span class = "badge badge rounded-pill bg-primary">{{ tag }} ({{ tag.post_set.count }}</span> {% endif %}</h1>
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                           <div class="carousel-item active">
@@ -118,41 +24,8 @@
                           <span class="sr-only">Next</span>
                         </a>
                       </div>
-                    {% endblock %}
-                </div>
-
-                <div class="col-sm-3">
-                    <!-- Search Widget -->
-                    <div class="card my-4">
-                        <h5 class="card-header">Search</h5>
-                        <div class="card-body">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button">Go!</button>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <!-- Categories Widget -->
-                    <div class="card mb-4" id = 'categories-card'>
-                        <h5 class="card-header">Categories</h5>
-                        <div class="card-body">
-                            <div class="row">
-                                    <ul>
-                                        {% for category in categories %}
-                                        <li><a href = "{{category.get_absolute_url}}">({{category}} {{category.post_set.count}})</a></li>
-                                        {% endfor %}
-                                        <li><a href = "/blog/category/no_category/">미분류 ({{no_category_post_count}})</a></li>
-                                    </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    
+                
     <div class="container">
         <h2>전체공모전</h2>
         <div class="list-group">
@@ -165,17 +38,4 @@
           <a href="#" class="list-group-item disabled">공모전7<span class="label label-default" style = "float:right">마감</span></a>
         </div>
       </div>
-      
-            <!-- /.container -->
-
-        <!-- Footer-->
-        <footer class="py-3 bg-dark">
-            <div class="container">
-                <p class="m-0 text-center text-white">
-                    Copyright &copy; GROUPING
-                </p>
-            </div>
-        </footer>
-
-</body>
-</html>
+      {% endblock %}
