@@ -12,22 +12,26 @@
 
     </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div class="card" id="field"></div>
 
 
 
-
-
 <script>
-    if(localStorage.getItem("alertText")){
-        var data = localStorage.getItem("alertText");
+    var data = localStorage.getItem("alertext");
+    
+    if(data != ''){
         document.getElementById("altText").innerHTML = data;
+        add_div();
+    }
 
-        
+    function add_div(){
         var div = document.createElement('div');
         div.innerHTML = document.getElementById('aa').innerHTML;
-        document.getElementById('field').appendChild(div);
+        ('field').append(div);
+        //document.getElementById('field').append(div);
     }
+
 
     
 

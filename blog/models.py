@@ -91,7 +91,6 @@ class Feedback(models.Model):
     op1=models.CharField(choices=SET_OF_CHOICES,max_length=100,default='')
     op2=models.CharField(choices=SET_OF_CHOICES,max_length=100,default='')
     op3=models.TextField(null=True,default='')
-    created_at = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
         return f'/blog/feedback/'
