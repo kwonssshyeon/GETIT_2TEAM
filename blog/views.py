@@ -81,10 +81,6 @@ class FeedbackCreate(CreateView):
 
 
 
-
-
-
-
 def category_page(request, slug):
     if slug == 'no_category':
         category = '미분류'
@@ -122,15 +118,24 @@ def tag_page(request, slug):
         }
     )
 
+def alert_page(request):
+    return render(
+        request,
+        'blog/alert.html'
+    )
+
+
 
 
 def feedback_page(request):
     feedback_list = Feedback.objects.all()
+    
     return render(
         request,
         'blog/feedback.html',
         {
             'feedback_list' : feedback_list
+            
         }
     )
 

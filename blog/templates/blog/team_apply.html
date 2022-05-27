@@ -16,11 +16,14 @@
                             <p>닉네임{{t.person}}</p>
                         </div>
                         <div class="col-8">
-                            <p>작성일 {{t.day}}</p>
+                            <p>작성일 : 2022.05.27 01:52 {{t.day}}</p>
                         </div>
                     </div>
                 </p>
-                <p class="card-text">여기에는 본문의 내용이 들어갑니다. 저는 ~~한 분을 찾고 있습니다.{{t.content}}</p>
+                <p class="card-text">* 경북대 근처에서 활동 사능한 분만 받겠습니다.<br>
+                    * 이미 활동 중이던 팀의 추가인원을 선발하는 것이기에 인터뷰를 진행하게 되었습니다.<br>
+                    인터뷰 확인차 진행하는 것이니 부담갖지 말고 지원해 주세요~~!{{t.content}}<br><br><br><br>
+                    <button class="btn btn-primary" id="demo" onclick=myFunction()>지원하기</button ></p>
                 
             </div>
         </div>
@@ -32,6 +35,16 @@
         </div>
 
     </div>
+
+    <script>
+        function myFunction() {
+            const btnElement = document.getElementById('demo');
+            btnElement.innerText = "지원완료";
+            alert('팀장님에게 메세지가 전송됩니다.\nㅇㅇㅇ님이 회원님의 "팀원 모집합니다" 글에 지원하였습니다.');
+            
+
+        }
+    </script>
 
     
                 
