@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 from django.contrib.auth.models import User
 import os
 
@@ -71,6 +72,19 @@ class Team(models.Model):
     created_date = models.DateTimeField(auto_now=True)
 
 
-    #여기 수정해야댐
     def get_absolute_url(self):
         return f'/blog/team/'
+
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=20,default='')
+    SET_OF_CHOICES = (
+        ('1','1'),
+        ('2','2'),
+        ('3','3'),
+        ('4','4'),
+        ('5','5'),
+    )
+    op1=forms.ChoiceField(choices=SET_OF_CHOICES,widget = forms.RadioSelect())
+    op2=forms.RadioSelect(choices=SET_OF_CHOICES)
+    op3=models.TextField(null=True,default='')
