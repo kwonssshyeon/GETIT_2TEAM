@@ -1,18 +1,35 @@
 {% extends 'blog/base_full_width.html' %}
 
 {% block main_area %}
-<div class="card">
-    <div class="card-body" id="altText">
-        
+
+<div class="card" id="aa">
+    <div class="card-body">
+        <div id="altText"></div>
+        <div align="right">
+            <a href="/about_me/" class="btn btn-primary">프로필 보기</a>
+            <a href="/blog/chat/" class="btn btn-primary">대화하기</a>
+        </div>
+
     </div>
-  </div>
+</div>
+<div class="card" id="field"></div>
 
 
 
-  <script>
 
+
+<script>
+    if(localStorage.getItem("alertText")){
         var data = localStorage.getItem("alertText");
         document.getElementById("altText").innerHTML = data;
+
+        
+        var div = document.createElement('div');
+        div.innerHTML = document.getElementById('aa').innerHTML;
+        document.getElementById('field').appendChild(div);
+    }
+
+    
 
 </script>
 
