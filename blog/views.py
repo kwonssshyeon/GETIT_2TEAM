@@ -157,6 +157,18 @@ def team_apply_page(request):
         'blog/team_apply.html'
     )
 
+
+def chat_page(request):
+    return render(
+        request,
+        'blog/chat.html'
+    )
+
+def star_rated_page(request):
+    return render(
+        request,
+        'blog/star_rated.html'
+    )
 #def team_create(request, team_id):
  #   team = get_object_or_404(Team, pk=team_id)
   #  team.team_set.create(content=request.POST.get('content'), create_date=timezone.now())

@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block main_area %}
+    <!--{% block head_title %}내 프로필{% endblock %}-->
+    <h2>채팅 (팀장 - 지원자 간)</h2>
+    <hr/>
+    <div class="card" style="max-width: 500px; min-height: 200px;">
+        <div class="card-body">
+            <p class="card-text">안녕하세요, 지원자님.</p>
+            <p class="card-text">저는 이번 공모전 팀장을 맡은 ㅇㅇㅇ입니다.</p>
+            <p class="card-text">우선 저희와 함께 하고픈 의사를 표명해주셔서 감사합니다.</p>
+            <p class="card-text">지원자님께서 보내주셔야 하는 파일들이 있습니다.</p>
+        </div>
+    </div>
+    <br>
+        <div class="container my-5"></div>
+        <div align="right">
+            <input type="text" style="min-width: 500px; min-height: 200px;" style="word-wrap:break-word">
+            <pre style='white-space:pre-wrap; word-wrap:break-word; word-break: break-all;'></pre>
+            <button type="button" class="btn btn-success">Send</button>
+        </div>
+{% endblock %}

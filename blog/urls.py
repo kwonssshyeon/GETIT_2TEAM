@@ -17,5 +17,7 @@ urlpatterns = [
     path('team/<int:pk>/',views.team_page),
     path('team_apply/', views.team_apply_page),
     path('alert/',views.alert_page),
+    path('chat/',views.chat_page),
+    path('star_rated/', views.star_rated_page),
     #path('<int:pk>/', views.single_post_page),
 ]

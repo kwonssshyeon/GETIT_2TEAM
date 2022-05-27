@@ -11,15 +11,15 @@
                         </div>
                         <div class="col-4">
 
-                            <h4>이름 | {{ p.name }}</h4>
+                            <h5>이름 | {{ p.name }}</h5>
                             <h6>홍길동</h6>
-                            <h4>학력 | {{ p.school }}</h4>
+                            <h5>학력 | {{ p.school }}</h5>
                             <h6>경북대학교 컴퓨터학부 글로벌SW융합전공</h6>
-                            <h4>약력 | {{ p.work }}</h4>
+                            <h5>약력 | {{ p.work }}</h5>
                             <h6>논문> Html과 CSS에 대하여</h6>
                         </div>
                         <div class="col-5">
-                            <h4>소개 |</h4>
+                            <h5>소개 |</h5>
                             <h6>안녕하세요. 세상을 바꾸고 싶은 프로그래머입니다. 함께 하고싶은 분들의 지원을 기다립니다.{{ p.content }}</h6>
                         </div> 
                     </div>
@@ -33,29 +33,26 @@
                             <button type="button" class="btn btn-primary btn-sm">프로그래밍</button>
                             <button type="button" class="btn btn-primary btn-sm">논문</button>
                             <button type="button" class="btn btn-primary btn-sm">+</button>
-                            <div class="container my-4"></div>
-                            <h4>평점 |</h4>
-                            <div class="star-ratings">
-                                <div 
-                                class="star-ratings-fill space-x-2 text-lg"
-                                :style="{ width: ratingToPercent + '%' }"
-                                >
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                                <div class="star-ratings-base space-x-2 text-lg">
-                                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                                </div>
-                            </div>
+                            <div class="container my-5"></div>
+                            <a href="/blog/star_rated/" class="btn btn-secondary btn-lg">평점 확인하러 가기</a>
+
                         </div>
                         <div class="col-8">
                             <h4>이전 활동</h4>
                             <div class="card" style="max-width: 500px; min-height: 200px;">
                                 <div class="card-body">
-                                    <p class="card-text">○○공모전 참여 / 프론트엔드 개발자 → 결과물 보기</p>
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <p class="card-text">○○공모전 참여 / 프론트엔드 개발자   → </p>
+                                        </div>
+                                        <div class="col-3">
+                                            <a href="https://github.com/jolrv/GETIT_2TEAM">결과물 보기</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     </div>
                 
-{% endblock %}  
+{% endblock %} 
